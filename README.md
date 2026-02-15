@@ -29,7 +29,6 @@ apt update && apt install wget curl iptables -y
 sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/bagherijaan/GRE2MB/main/gre2mb.sh)"
 ```
 
-![g2m](https://github.com/user-attachments/assets/be6a6537-b122-4ddb-b7c8-007c9b29620f)
 
 
 ## 📖 راهنمای استفاده
@@ -41,6 +40,8 @@ sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/bagherijaan/GRE2MB/
 کلید مخفی: در هر دو سرور از یک Secret Key یکسان استفاده کنید تا IPها هماهنگ شوند.
 
 فوروارد پورت: (فقط در سرور ایران) پورت‌های مورد نظر خود را برای انتقال وارد کنید.
+
+![g2m](https://github.com/user-attachments/assets/be6a6537-b122-4ddb-b7c8-007c9b29620f)
 
 ## 📊 ساختار فنی تونل
 این اسکریپت ترافیک را به این صورت بسته‌بندی می‌کند تا از فیلترینگ عبور کند:
