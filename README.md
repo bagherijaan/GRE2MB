@@ -26,8 +26,10 @@ apt update && apt install wget curl iptables -y
 دستور زیر را کپی کرده و در ترمینال هر دو سرور (ایران و خارج) اجرا کنید:
 
 ```bash
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/bagherijaan/GRE2MB/main/gre2mb.sh)"
+sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/bagherijaan/GRE2MB/main/gre2mb.sh)"
 ```
+
+![g2m](https://github.com/user-attachments/assets/be6a6537-b122-4ddb-b7c8-007c9b29620f)
 
 
 ## 📖 راهنمای استفاده
