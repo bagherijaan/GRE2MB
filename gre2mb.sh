@@ -215,12 +215,12 @@ test_connection() {
     T4=$([ "$SERVER_TYPE" == "IRAN" ] && echo $INT_IPV4_KH || echo $INT_IPV4_IR)
     T6=$([ "$SERVER_TYPE" == "IRAN" ] && echo $FAKE_IPV6_KH || echo $FAKE_IPV6_IR)
     echo -e "\n${BLUE}Testing Connection...${RESET}"
-    echo -e "+--------------+---------------------------------------+----------------+"
-    echo -e "| Target       | IP Address                            |     Latency    |"
-    echo -e "+--------------+---------------------------------------+----------------+"
-    P=$(ping -c 3 -W 5 $T4 | grep 'time=' | awk -F'time=' '{print $2}')
+    echo -e "+--------------+---------------------------------------+----------+"
+    echo -e "| Target       | IP Address                            |  Latency |"
+    echo -e "+--------------+---------------------------------------+----------+"
+    P=$(ping -c 1 -W 5 $T4 | grep 'time=' | awk -F'time=' '{print $2}')
     [ -n "$P" ] && printf "| Tunnel GRE6  | %-37s | ${GREEN}%-8s${RESET} |\n" "$T4" "$P" || printf "| Tunnel GRE6  | %-37s | ${RED}%-8s${RESET} |\n" "$T4" "FAIL"
-    P=$(ping6 -c 3 -W 5 $T6 | grep 'time=' | awk -F'time=' '{print $2}')
+    P=$(ping6 -c 1 -W 5 $T6 | grep 'time=' | awk -F'time=' '{print $2}')
     [ -n "$P" ] && printf "| Tunnel 6to4  | %-37s | ${GREEN}%-8s${RESET} |\n" "$T6" "$P" || printf "| Tunnel 6to4  | %-37s | ${RED}%-8s${RESET} |\n" "$T6" "FAIL"
     echo -e "+--------------+---------------------------------------+----------+"
     read -p "Press Enter..."
