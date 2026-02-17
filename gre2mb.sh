@@ -219,9 +219,9 @@ test_connection() {
     echo -e "| Target       | IP Address                            | Latency  |"
     echo -e "+--------------+---------------------------------------+----------+"
     P=$(ping -c 1 -W 2 $T4 | grep 'time=' | awk -F'time=' '{print $2}')
-    [ -n "$P" ] && printf "| Tunnel 6to4  | %-37s | ${GREEN}%-8s${RESET} |\n" "$T4" "$P" || printf "| Tunnel 6to4  | %-37s | ${RED}%-8s${RESET} |\n" "$T4" "FAIL"
+    [ -n "$P" ] && printf "| Tunnel GRE6  | %-37s | ${GREEN}%-8s${RESET} |\n" "$T4" "$P" || printf "| Tunnel GRE6  | %-37s | ${RED}%-8s${RESET} |\n" "$T4" "FAIL"
     P=$(ping6 -c 1 -W 2 $T6 | grep 'time=' | awk -F'time=' '{print $2}')
-    [ -n "$P" ] && printf "| Tunnel GRE6  | %-37s | ${GREEN}%-8s${RESET} |\n" "$T6" "$P" || printf "| Tunnel GRE6  | %-37s | ${RED}%-8s${RESET} |\n" "$T6" "FAIL"
+    [ -n "$P" ] && printf "| Tunnel 6to4  | %-37s | ${GREEN}%-8s${RESET} |\n" "$T6" "$P" || printf "| Tunnel 6to4  | %-37s | ${RED}%-8s${RESET} |\n" "$T6" "FAIL"
     echo -e "+--------------+---------------------------------------+----------+"
     read -p "Press Enter..."
 }
